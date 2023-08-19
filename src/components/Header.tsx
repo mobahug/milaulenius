@@ -26,7 +26,7 @@ export const PortfolioHeader = () => {
         >
           <Grid item xs={7} sm={10} justifyContent="flex-start">
             <Typography variant="body1" component="div">
-              Mila Ulenius
+              Mila Ulenius12
             </Typography>
           </Grid>
           <Grid item xs={2} sm={1} sx={{ width: 20 }}>
