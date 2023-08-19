@@ -1,4 +1,3 @@
-import * as React from "react";
 import { ImageList, ImageListItem, Box, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Theme } from "@mui/system";

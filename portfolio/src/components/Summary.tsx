@@ -1,5 +1,4 @@
 import { Typography, Grid } from "@mui/material";
-import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Theme } from "@mui/system";
 
