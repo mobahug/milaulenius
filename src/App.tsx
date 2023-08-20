@@ -10,6 +10,8 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+import { CircularProgress, Container } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const theme = createTheme({
   typography: {
@@ -36,10 +38,49 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <Container
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          pt: 20,
+        }}
+        maxWidth="lg"
+      >
+        <CircularProgress color="inherit" />
+      </Container>
+    );
+  }
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RouterProvider router={router} />
+        {isLoading ? (
+          <Container
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100vh",
+              pt: 20,
+            }}
+            maxWidth="lg"
+          >
+            <CircularProgress color="inherit" />
+          </Container>
+        ) : (
+          <RouterProvider router={router} />
+        )}
       </ThemeProvider>
     </>
   );

@@ -2,6 +2,11 @@ import { Box, Button, Grid, Paper, Theme, useMediaQuery } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Link as RouterLink } from "react-router-dom";
 
+const HEADER_GRID_STYLE = {
+  display: "flex",
+  justifyContent: "flex-end",
+};
+
 export const PortfolioHeader = () => {
   const color = grey[800];
   const isSmallScreen = useMediaQuery((theme: Theme) =>
@@ -47,17 +52,12 @@ export const PortfolioHeader = () => {
               Mila Ulenius
             </Button>
           </Grid>
-          <Grid
-            item
-            xs={2}
-            sm={1}
-            sx={{ display: "flex", justifyContent: "flex-end" }}
-          >
+          <Grid item xs={2} sm={1} sx={{ ...HEADER_GRID_STYLE }}>
             <Button
               component={RouterLink}
               to="/about"
               sx={{
-                fontFamily: "League Spartan",
+                // fontFamily: "League Spartan",
                 color: color,
                 textTransform: "none",
                 backgroundColor: "transparent",
@@ -71,12 +71,7 @@ export const PortfolioHeader = () => {
               About
             </Button>
           </Grid>
-          <Grid
-            item
-            xs={3}
-            sm={1}
-            sx={{ display: "flex", justifyContent: "flex-end" }}
-          >
+          <Grid item xs={3} sm={1} sx={{ ...HEADER_GRID_STYLE }}>
             <Button
               component={RouterLink}
               to="mailto:milau97@gmail.com"
