@@ -46,22 +46,6 @@ function App() {
     }, 1000);
   }, []);
 
-  if (isLoading) {
-    return (
-      <Container
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          pt: 20,
-        }}
-        maxWidth="lg"
-      >
-        <CircularProgress color="inherit" />
-      </Container>
-    );
-  }
   return (
     <>
       <ThemeProvider theme={theme}>

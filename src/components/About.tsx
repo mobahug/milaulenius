@@ -2,10 +2,13 @@ import { Container, Typography, Grid, Link } from "@mui/material"; // Add Link i
 import { PortfolioHeader } from "./Header";
 import { grey } from "@mui/material/colors";
 import { PortfolioFooter } from "./Footer";
+import { useState } from "react";
 
 const color = grey[500];
 
 export const About: React.FC = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <>
       <PortfolioHeader />
@@ -39,7 +42,10 @@ export const About: React.FC = () => {
                 width: "100%",
                 aspectRatio: "1/1",
                 objectFit: "cover",
-              }} // Added styles here
+                opacity: isLoaded ? 1 : 0,
+                transition: "opacity 1.5s",
+              }}
+              onLoad={() => setIsLoaded(true)}
             />
           </Grid>
         </Grid>

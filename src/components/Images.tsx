@@ -1,57 +1,65 @@
 import { ImageList, ImageListItem, Box, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Theme } from "@mui/system";
+import { useState } from "react";
 
 export default function PortfolioImages() {
   const isSmallScreen = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down("sm")
   );
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
     <ImageList variant="masonry" cols={isSmallScreen ? 1 : 3} gap={20}>
-      {itemData.map((item) => (
-        <ImageListItem
-          key={item.img}
-          sx={{
-            overflow: "hidden",
-            borderRadius: "2%",
-            position: "relative",
-            "&:hover .overlay": {
-              opacity: 1,
-            },
-          }}
-        >
-          <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <Box
-            className="overlay"
+      {itemData.map((item) => {
+        return (
+          <ImageListItem
+            key={item.img}
             sx={{
-              position: "absolute",
-              top: 0,
-              bottom: 0,
-              right: 0,
-              left: 0,
-              backgroundColor: "rgba(0, 0, 0, 0.5)", // semi-transparent grey
-              opacity: 0,
-              transition: "opacity 0.3s",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
+              overflow: "hidden",
+              borderRadius: "2%",
+              position: "relative",
+              "&:hover .overlay": {
+                opacity: 1,
+              },
             }}
           >
-            <Typography variant="h6" color="white">
-              {item.title}
-            </Typography>
-            <Typography variant="body2" color="white">
-              {item.year}
-            </Typography>
-          </Box>
-        </ImageListItem>
-      ))}
+            <img
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item.title}
+              onLoad={() => setIsLoaded(true)}
+              style={{
+                opacity: isLoaded ? 1 : 0,
+                transition: "opacity 1.5s",
+              }}
+            />
+            <Box
+              className="overlay"
+              sx={{
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                right: 0,
+                left: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.5)", // semi-transparent grey
+                opacity: 0,
+                transition: "opacity 0.3s",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography variant="h6" color="white">
+                {item.title}
+              </Typography>
+              <Typography variant="body2" color="white">
+                {item.year}
+              </Typography>
+            </Box>
+          </ImageListItem>
+        );
+      })}
     </ImageList>
   );
 }
