@@ -56,7 +56,6 @@ function App() {
               justifyContent: "center",
               alignItems: "center",
               height: "100vh",
-              pt: 20,
             }}
             maxWidth="lg"
           >
