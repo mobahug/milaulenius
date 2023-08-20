@@ -1,10 +1,12 @@
-import { Box, Grid, Paper } from "@mui/material";
+import { Box, Button, Grid, Paper, Theme, useMediaQuery } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Link as RouterLink } from "react-router-dom";
-import { Link as MuiLink } from "@mui/material";
 
 export const PortfolioHeader = () => {
   const color = grey[800];
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
 
   return (
     <Box
@@ -22,39 +24,76 @@ export const PortfolioHeader = () => {
           color={color}
           container
           spacing={1}
-          p={5}
+          p={isSmallScreen ? 2 : 5}
           direction="row"
           alignItems="center"
         >
-          <Grid item xs={7} sm={10} justifyContent="flex-start">
-            <MuiLink
-              sx={{ fontFamily: "League Spartan", color: color }}
+          <Grid item xs={7} sm={10}>
+            <Button
               component={RouterLink}
               to="/milaulenius"
-              underline="none"
+              sx={{
+                fontFamily: "League Spartan",
+                color: color,
+                textTransform: "none",
+                backgroundColor: "transparent",
+                "&:hover": {
+                  backgroundColor: grey[100],
+                },
+              }}
+              disableElevation
+              disableRipple
             >
               Mila Ulenius
-            </MuiLink>
+            </Button>
           </Grid>
-          <Grid item xs={2} sm={1} sx={{ width: 20 }}>
-            <MuiLink
-              sx={{ fontFamily: "League Spartan", color: color }}
+          <Grid
+            item
+            xs={2}
+            sm={1}
+            sx={{ display: "flex", justifyContent: "flex-end" }}
+          >
+            <Button
               component={RouterLink}
               to="/about"
-              underline="none"
+              sx={{
+                fontFamily: "League Spartan",
+                color: color,
+                textTransform: "none",
+                backgroundColor: "transparent",
+                "&:hover": {
+                  backgroundColor: grey[100],
+                },
+              }}
+              disableElevation
+              disableRipple
             >
               About
-            </MuiLink>
+            </Button>
           </Grid>
-          <Grid item xs={3} sm={1}>
-            <MuiLink
-              sx={{ fontFamily: "League Spartan", color: color }}
+          <Grid
+            item
+            xs={3}
+            sm={1}
+            sx={{ display: "flex", justifyContent: "flex-end" }}
+          >
+            <Button
               component={RouterLink}
               to="mailto:milau97@gmail.com"
-              underline="none"
+              sx={{
+                fontFamily: "League Spartan",
+                color: color,
+                textTransform: "none",
+                backgroundColor: "transparent",
+                "&:hover": {
+                  backgroundColor: grey[100],
+                },
+              }}
+              disableElevation
+              disableRipple
             >
               Contact
-            </MuiLink>
+            </Button>
           </Grid>
         </Grid>
       </Paper>
