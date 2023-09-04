@@ -2,12 +2,15 @@ import { Container, Typography, Grid, Link } from "@mui/material"; // Add Link i
 import { PortfolioHeader } from "./Header";
 import { grey } from "@mui/material/colors";
 import { PortfolioFooter } from "./Footer";
-import { useState } from "react";
+import React from "react";
 
 const color = grey[500];
 
 export const About: React.FC = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  React.useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <>
@@ -15,7 +18,15 @@ export const About: React.FC = () => {
       <Container maxWidth="lg" sx={{ pt: 20 }}>
         <Grid container spacing={5} sx={{ align: "center" }}>
           <Grid item xs={12} sm={6}>
-            <Typography variant="h6" textAlign="left">
+            <Typography
+              variant="h6"
+              textAlign="left"
+              style={{
+                opacity: isLoaded ? 1 : 0,
+                transform: isLoaded ? "translateY(0)" : "translateY(-20px)",
+                transition: "opacity 1.5s, transform 1.5s",
+              }}
+            >
               Hey, I'm Mila Ulenius. I am a cloth & fashion designer based in
               Espoo, Finland.
               <br />
