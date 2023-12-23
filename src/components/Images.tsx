@@ -55,9 +55,10 @@ export default function PortfolioImages() {
 
   const adjustedItemData = itemData.map(item => ({
     ...item,
-    img: process.env.NODE_ENV === 'production'
-      ? `/milaulenius${item.img}`
-      : item.img.replace('/milaulenius', ''),
+    img:
+      process.env.NODE_ENV === 'production'
+        ? `/milaulenius${item.img}`
+        : item.img.replace('/milaulenius', ''),
   }));
 
   return (
@@ -79,6 +80,7 @@ export default function PortfolioImages() {
               }}
             >
               <img
+                loading="lazy"
                 src={item.img}
                 srcSet={item.img}
                 alt={item.title}
@@ -128,6 +130,7 @@ export default function PortfolioImages() {
             <Grid container direction="row">
               <Grid item xs={12} md={6} p={4}>
                 <img
+                  loading="lazy"
                   src={currentItem.img}
                   alt={currentItem.title}
                   style={{
@@ -287,6 +290,7 @@ export default function PortfolioImages() {
     </>
   );
 }
+
 const itemData: Item[] = [
   /* ======  1. COLUMN  ====== */
   {

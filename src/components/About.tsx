@@ -23,7 +23,6 @@ export const About: React.FC = () => {
   React.useEffect(() => {
     setIsLoaded(true);
   }, []);
-  
 
   return (
     <>
