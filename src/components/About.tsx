@@ -23,6 +23,7 @@ export const About: React.FC = () => {
   React.useEffect(() => {
     setIsLoaded(true);
   }, []);
+  
 
   return (
     <>
@@ -57,7 +58,11 @@ export const About: React.FC = () => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <img
-              src="../assets/mila_ulenius_portfolio.jpg"
+              src={
+                process.env.NODE_ENV === 'production'
+                  ? '/milaulenius/mila_ulenius_portfolio.jpg'
+                  : '/mila_ulenius_portfolio.jpg'
+              }
               alt="Mila Ulenius"
               style={{
                 borderRadius: '2%',

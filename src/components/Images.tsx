@@ -53,10 +53,17 @@ export default function PortfolioImages() {
     setImageFadeIn(false);
   };
 
+  const adjustedItemData = itemData.map(item => ({
+    ...item,
+    img: process.env.NODE_ENV === 'production'
+      ? `/milaulenius${item.img}`
+      : item.img.replace('/milaulenius', ''),
+  }));
+
   return (
     <>
       <ImageList variant="masonry" cols={isSmallScreen ? 1 : 3} gap={20}>
-        {itemData.map(item => {
+        {adjustedItemData.map(item => {
           return (
             <ImageListItem
               key={item.img}
@@ -283,7 +290,7 @@ export default function PortfolioImages() {
 const itemData: Item[] = [
   /* ======  1. COLUMN  ====== */
   {
-    img: '/milaulenius/rolf_ekroth_ss2440265_final_lores.jpg',
+    img: '/rolf_ekroth_ss2440265_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
@@ -293,7 +300,7 @@ const itemData: Item[] = [
     color3: '#340e0f',
   },
   {
-    img: '/milaulenius/rolf_ekroth_ss2440782_final_lores.jpg',
+    img: '/rolf_ekroth_ss2440782_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
@@ -303,7 +310,7 @@ const itemData: Item[] = [
     color3: '#371717',
   },
   {
-    img: '/milaulenius/rolf_ekroth_ss2441462_final_lores.jpg',
+    img: '/rolf_ekroth_ss2441462_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
@@ -315,7 +322,7 @@ const itemData: Item[] = [
 
   /* ======  2. COLUMN  ====== */
   {
-    img: '/milaulenius/rolf_ekroth_ss2440417_final_lores.jpg',
+    img: '/rolf_ekroth_ss2440417_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
@@ -325,7 +332,7 @@ const itemData: Item[] = [
     color3: '#1e1820',
   },
   {
-    img: '/milaulenius/rolf_ekroth_ss2440850_final_lores.jpg',
+    img: '/rolf_ekroth_ss2440850_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
@@ -335,7 +342,7 @@ const itemData: Item[] = [
     color3: '#391b1c',
   },
   {
-    img: '/milaulenius/rolf_ekroth_ss2441555_final_lores.jpg',
+    img: '/rolf_ekroth_ss2441555_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
@@ -347,7 +354,7 @@ const itemData: Item[] = [
 
   /* ======  3. COLUMN  ====== */
   {
-    img: '/milaulenius/rolf_ekroth_ss2440736_final_lores.jpg',
+    img: '/rolf_ekroth_ss2440736_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
@@ -357,7 +364,7 @@ const itemData: Item[] = [
     color3: '#3c1a1c',
   },
   {
-    img: '/milaulenius/rolf_ekroth_ss2439902_final_lores.jpg',
+    img: '/rolf_ekroth_ss2439902_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
@@ -367,7 +374,7 @@ const itemData: Item[] = [
     color3: '#3c1c1d',
   },
   {
-    img: '/milaulenius/rolf_ekroth_ss2442102_final_lores.jpg',
+    img: '/rolf_ekroth_ss2442102_final_lores.jpg',
     title: 'The dress is Designed and Sewed by Mila Ulenius',
     year: 'Rolf Ekruth SS24 Collection',
     description:
