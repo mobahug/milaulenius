@@ -57,7 +57,7 @@ export const About: React.FC = () => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <img
-              src="../../private/MilaUleniusPortfolio.jpg"
+              src="../../public/MilaUleniusPortfolio.jpg"
               alt="Mila Ulenius"
               style={{
                 borderRadius: '2%',
