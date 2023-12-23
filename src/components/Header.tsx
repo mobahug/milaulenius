@@ -1,32 +1,32 @@
-import { Box, Button, Grid, Paper, Theme, useMediaQuery } from "@mui/material";
-import { grey } from "@mui/material/colors";
-import { Link as RouterLink } from "react-router-dom";
+import { Box, Button, Grid, Paper, Theme, useMediaQuery } from '@mui/material';
+import { grey } from '@mui/material/colors';
+import { Link as RouterLink } from 'react-router-dom';
 
 const HEADER_GRID_STYLE = {
-  display: "flex",
-  justifyContent: "flex-end",
+  display: 'flex',
+  justifyContent: 'flex-end',
 };
 
 export const PortfolioHeader = () => {
-  const color = grey[800];
+  const greyishFontColor = grey[800];
   const isSmallScreen = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
+    theme.breakpoints.down('sm'),
   );
 
   return (
     <Box
       sx={{
-        position: "fixed",
+        position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 1,
-        backgroundColor: "transparent",
+        backgroundColor: 'transparent',
       }}
     >
       <Paper square elevation={0} sx={{ opacity: 0.9 }}>
         <Grid
-          color={color}
+          color={greyishFontColor}
           container
           spacing={1}
           p={isSmallScreen ? 2 : 5}
@@ -38,11 +38,11 @@ export const PortfolioHeader = () => {
               component={RouterLink}
               to="/milaulenius"
               sx={{
-                fontFamily: "League Spartan",
-                color: color,
-                textTransform: "none",
-                backgroundColor: "transparent",
-                "&:hover": {
+                fontFamily: 'League Spartan',
+                color: greyishFontColor,
+                textTransform: 'none',
+                backgroundColor: 'transparent',
+                '&:hover': {
                   backgroundColor: grey[100],
                 },
               }}
@@ -57,11 +57,10 @@ export const PortfolioHeader = () => {
               component={RouterLink}
               to="/about"
               sx={{
-                // fontFamily: "League Spartan",
-                color: color,
-                textTransform: "none",
-                backgroundColor: "transparent",
-                "&:hover": {
+                color: greyishFontColor,
+                textTransform: 'none',
+                backgroundColor: 'transparent',
+                '&:hover': {
                   backgroundColor: grey[100],
                 },
               }}
@@ -76,11 +75,11 @@ export const PortfolioHeader = () => {
               component={RouterLink}
               to="mailto:milau97@gmail.com"
               sx={{
-                fontFamily: "League Spartan",
-                color: color,
-                textTransform: "none",
-                backgroundColor: "transparent",
-                "&:hover": {
+                fontFamily: 'League Spartan',
+                color: greyishFontColor,
+                textTransform: 'none',
+                backgroundColor: 'transparent',
+                '&:hover': {
                   backgroundColor: grey[100],
                 },
               }}

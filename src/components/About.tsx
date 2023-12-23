@@ -1,13 +1,25 @@
-import { Container, Typography, Grid, Link } from "@mui/material"; // Add Link import
-import { PortfolioHeader } from "./Header";
-import { grey } from "@mui/material/colors";
-import { PortfolioFooter } from "./Footer";
-import React from "react";
+import {
+  Container,
+  Typography,
+  Grid,
+  Link,
+  Theme,
+  useMediaQuery,
+} from '@mui/material';
+import { PortfolioHeader } from './Header';
+import { grey } from '@mui/material/colors';
+import { PortfolioFooter } from './Footer';
+import React from 'react';
 
 const color = grey[500];
 
 export const About: React.FC = () => {
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down('sm'),
+  );
+
   const [isLoaded, setIsLoaded] = React.useState(false);
+
   React.useEffect(() => {
     setIsLoaded(true);
   }, []);
@@ -15,16 +27,16 @@ export const About: React.FC = () => {
   return (
     <>
       <PortfolioHeader />
-      <Container maxWidth="lg" sx={{ pt: 20 }}>
-        <Grid container spacing={5} sx={{ align: "center" }}>
+      <Container maxWidth="lg" sx={{ pt: isSmallScreen ? 10 : 20 }}>
+        <Grid container spacing={5} sx={{ align: 'center' }}>
           <Grid item xs={12} sm={6}>
             <Typography
               variant="h6"
               textAlign="left"
               style={{
                 opacity: isLoaded ? 1 : 0,
-                transform: isLoaded ? "translateY(0)" : "translateY(-20px)",
-                transition: "opacity 1.5s, transform 1.5s",
+                transform: isLoaded ? 'translateY(0)' : 'translateY(-20px)',
+                transition: 'opacity 1.5s, transform 1.5s',
               }}
             >
               Hey, I'm Mila Ulenius. I am a cloth & fashion designer based in
@@ -36,7 +48,7 @@ export const About: React.FC = () => {
               presentation of the collections.
               <br />
               <br />
-              You can contact me at{" "}
+              You can contact me at{' '}
               <Link color={color} href="mailto:milau97@gmail.com">
                 milau97@gmail.com
               </Link>
@@ -45,16 +57,16 @@ export const About: React.FC = () => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <img
-              src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=496&fit=crop&auto=format"
-              srcSet={`https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=496&fit=crop&auto=format&dpr=2 2x`}
-              alt="Sink"
+              src="../../private/MilaUleniusPortfolio.jpg"
+              alt="Mila Ulenius"
               style={{
-                borderRadius: "2%",
-                width: "100%",
-                aspectRatio: "1/1",
-                objectFit: "cover",
+                borderRadius: '2%',
+                width: '100%',
+                maxWidth: '500px',
+                aspectRatio: '1/1',
+                objectFit: 'cover',
                 opacity: isLoaded ? 1 : 0,
-                transition: "opacity 1.5s",
+                transition: 'opacity 1.5s, transform 1.5s',
               }}
               onLoad={() => setIsLoaded(true)}
             />

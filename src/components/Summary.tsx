@@ -1,11 +1,11 @@
-import { Typography, Grid } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { Theme } from "@mui/system";
-import React from "react";
+import { Typography, Grid } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { Theme } from '@mui/system';
+import React from 'react';
 
 export const PortfolioSummary = () => {
   const isSmallScreen = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
+    theme.breakpoints.down('sm'),
   );
   const [isLoaded, setIsLoaded] = React.useState(false);
   React.useEffect(() => {
@@ -23,11 +23,11 @@ export const PortfolioSummary = () => {
     >
       <Grid item xs={12}>
         <Typography
-          variant={isSmallScreen ? "h5" : "h3"}
+          variant={isSmallScreen ? 'h5' : 'h3'}
           style={{
             opacity: isLoaded ? 1 : 0,
-            transform: !isLoaded ? "translateY(-20px)" : "translateY(0)",
-            transition: "opacity 1.5s, transform 1.5s",
+            transform: !isLoaded ? 'translateY(-20px)' : 'translateY(0)',
+            transition: 'opacity 1.5s, transform 1.5s',
           }}
         >
           Mila Ulenius is a Finnish artist and clothing designer.

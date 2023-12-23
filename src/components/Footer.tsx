@@ -1,5 +1,5 @@
-import { Box, Typography, Container, Link } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { Box, Typography, Container, Link } from '@mui/material';
+import { grey } from '@mui/material/colors';
 
 export const PortfolioFooter = () => {
   const color = grey[800];
@@ -16,7 +16,7 @@ export const PortfolioFooter = () => {
           Mila Ulenius
         </Typography>
         <Typography variant="body2" color="textSecondary" align="center">
-          © 2023 Created by{" "}
+          © 2023 Created by{' '}
           <Link
             href="https://github.com/mobahug"
             underline="none"

@@ -1,17 +1,17 @@
-import "./App.css";
-import { About } from "./components/About";
-import { PortfolioBody } from "./components/Body";
-import { PortfolioFooter } from "./components/Footer";
-import { PortfolioHeader } from "./components/Header";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import './App.css';
+import { About } from './components/About';
+import { PortfolioBody } from './components/Body';
+import { PortfolioFooter } from './components/Footer';
+import { PortfolioHeader } from './components/Header';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-} from "react-router-dom";
-import { CircularProgress, Container } from "@mui/material";
-import { useEffect, useState } from "react";
+} from 'react-router-dom';
+import { CircularProgress, Container } from '@mui/material';
+import { useEffect, useState } from 'react';
 
 const theme = createTheme({
   typography: {
@@ -33,8 +33,8 @@ const router = createBrowserRouter(
         }
       />
       <Route path="/about" element={<About />} />
-    </>
-  )
+    </>,
+  ),
 );
 
 function App() {
@@ -52,10 +52,10 @@ function App() {
         {isLoading ? (
           <Container
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100vh",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100vh',
             }}
             maxWidth="lg"
           >
