@@ -57,6 +57,7 @@ export const About: React.FC = () => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <img
+              loading="lazy"
               src={
                 process.env.NODE_ENV === 'production'
                   ? '/milaulenius/mila_ulenius_portfolio.jpg'
