@@ -160,7 +160,11 @@ export const PortfolioHeader = () => {
               <Grid item xs={2} sm={1} sx={{ ...HEADER_GRID_STYLE }}>
                 <Link
                   underline="none"
-                  href="../../public/demo.pdf"
+                  href={
+                    process.env.NODE_ENV === 'production'
+                      ? '/milaulenius/demo.pdf'
+                      : '../../../public/demo.pdf'
+                  }
                   target="_blank"
                 >
                   <Button
