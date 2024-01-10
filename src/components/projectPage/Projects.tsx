@@ -159,7 +159,7 @@ export const Projects = () => {
                 enableSmoothScroll={true}
                 fileUrl={
                   process.env.NODE_ENV === 'production'
-                    ? '/milaulenius/public/demo.pdf'
+                    ? '/milaulenius/demo.pdf'
                     : '/demo.pdf'
                 }
                 defaultScale={SpecialZoomLevel.PageWidth}
@@ -196,7 +196,7 @@ export const Projects = () => {
                 enableSmoothScroll={true}
                 fileUrl={
                   process.env.NODE_ENV === 'production'
-                    ? '/milaulenius/public/demo.pdf'
+                    ? '/milaulenius/demo.pdf'
                     : '/demo.pdf'
                 }
                 defaultScale={SpecialZoomLevel.PageWidth}
@@ -233,7 +233,7 @@ export const Projects = () => {
                 enableSmoothScroll={true}
                 fileUrl={
                   process.env.NODE_ENV === 'production'
-                    ? '/milaulenius/public/demo.pdf'
+                    ? '/milaulenius/demo.pdf'
                     : '/demo.pdf'
                 }
                 defaultScale={SpecialZoomLevel.PageWidth}
@@ -270,7 +270,7 @@ export const Projects = () => {
                 enableSmoothScroll={true}
                 fileUrl={
                   process.env.NODE_ENV === 'production'
-                    ? '/milaulenius/public/demo.pdf'
+                    ? '/milaulenius/demo.pdf'
                     : '/demo.pdf'
                 }
                 defaultScale={SpecialZoomLevel.PageWidth}

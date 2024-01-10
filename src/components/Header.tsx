@@ -61,7 +61,11 @@ export const PortfolioHeader = () => {
           <Divider variant="fullWidth" />
           <ListItemButton
             component={Link}
-            href="../../public/demo.pdf"
+            href={
+              process.env.NODE_ENV === 'production'
+                ? '/milaulenius/demo.pdf'
+                : '/demo.pdf'
+            }
             target="_blank"
           >
             <ListItemText sx={{ ml: 1 }} primary="CV" />
@@ -162,7 +166,7 @@ export const PortfolioHeader = () => {
                   underline="none"
                   href={
                     process.env.NODE_ENV === 'production'
-                      ? '/milaulenius/public/demo.pdf'
+                      ? '/milaulenius/demo.pdf'
                       : '/demo.pdf'
                   }
                   target="_blank"
