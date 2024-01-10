@@ -130,7 +130,6 @@ export const Projects = () => {
   return (
     <>
       <Container maxWidth="lg" sx={{ pt: isSmallScreen ? 2 : 4 }}>
-        test
         <Worker workerUrl={url}>
           <Accordion
             defaultExpanded
