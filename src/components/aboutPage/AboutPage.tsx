@@ -6,14 +6,15 @@ import {
   Theme,
   useMediaQuery,
 } from '@mui/material';
-import { PortfolioHeader } from './Header';
+import { PortfolioHeader } from '../Header';
 import { grey } from '@mui/material/colors';
-import { PortfolioFooter } from './Footer';
+import { PortfolioFooter } from '../Footer';
 import React from 'react';
+import { ScrollToTop } from '../../utilities';
 
 const color = grey[500];
 
-export const About: React.FC = () => {
+export const AboutPage: React.FC = () => {
   const isSmallScreen = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down('sm'),
   );
@@ -26,6 +27,7 @@ export const About: React.FC = () => {
 
   return (
     <>
+      <ScrollToTop />
       <PortfolioHeader />
       <Container maxWidth="lg" sx={{ pt: isSmallScreen ? 10 : 20 }}>
         <Grid container spacing={5} sx={{ align: 'center' }}>

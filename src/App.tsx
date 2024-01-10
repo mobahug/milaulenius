@@ -1,8 +1,6 @@
 import './App.css';
-import { About } from './components/About';
-import { PortfolioBody } from './components/Body';
-import { PortfolioFooter } from './components/Footer';
-import { PortfolioHeader } from './components/Header';
+import { AboutPage } from './components/aboutPage/AboutPage';
+import { PortfolioLandingPage } from './components/landingPage/PortfolioLandingPage';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
   Route,
@@ -12,6 +10,7 @@ import {
 } from 'react-router-dom';
 import { CircularProgress, Container } from '@mui/material';
 import { useEffect, useState } from 'react';
+import ProjectPage from './components/projectPage/ProjectPage';
 
 const theme = createTheme({
   typography: {
@@ -22,17 +21,9 @@ const theme = createTheme({
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route
-        path="/milaulenius"
-        element={
-          <>
-            <PortfolioHeader />
-            <PortfolioBody />
-            <PortfolioFooter />
-          </>
-        }
-      />
-      <Route path="/about" element={<About />} />
+      <Route path="/milaulenius" element={<PortfolioLandingPage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/projects" element={<ProjectPage />} />
     </>,
   ),
 );
