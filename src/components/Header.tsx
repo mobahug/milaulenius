@@ -162,8 +162,8 @@ export const PortfolioHeader = () => {
                   underline="none"
                   href={
                     process.env.NODE_ENV === 'production'
-                      ? '/milaulenius/demo.pdf'
-                      : '../../../public/demo.pdf'
+                      ? '/milaulenius/public/demo.pdf'
+                      : '/demo.pdf'
                   }
                   target="_blank"
                 >

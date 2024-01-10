@@ -158,8 +158,8 @@ export const Projects = () => {
                 enableSmoothScroll={true}
                 fileUrl={
                   process.env.NODE_ENV === 'production'
-                    ? '/milaulenius/demo.pdf'
-                    : '../../../public/demo.pdf'
+                    ? '/milaulenius/public/demo.pdf'
+                    : '/demo.pdf'
                 }
                 defaultScale={SpecialZoomLevel.PageWidth}
                 plugins={[defaultLayoutPluginInstance, zoomPluginInstance]}
@@ -193,7 +193,11 @@ export const Projects = () => {
             <AccordionDetails>
               <Viewer
                 enableSmoothScroll={true}
-                fileUrl="../../../public/demo.pdf"
+                fileUrl={
+                  process.env.NODE_ENV === 'production'
+                    ? '/milaulenius/public/demo.pdf'
+                    : '/demo.pdf'
+                }
                 defaultScale={SpecialZoomLevel.PageWidth}
                 plugins={[defaultLayoutPluginInstance, zoomPluginInstance]}
                 transformGetDocumentParams={(
@@ -226,7 +230,11 @@ export const Projects = () => {
             <AccordionDetails>
               <Viewer
                 enableSmoothScroll={true}
-                fileUrl="../../../public/demo.pdf"
+                fileUrl={
+                  process.env.NODE_ENV === 'production'
+                    ? '/milaulenius/public/demo.pdf'
+                    : '/demo.pdf'
+                }
                 defaultScale={SpecialZoomLevel.PageWidth}
                 plugins={[defaultLayoutPluginInstance, zoomPluginInstance]}
                 transformGetDocumentParams={(
@@ -259,7 +267,11 @@ export const Projects = () => {
             <AccordionDetails>
               <Viewer
                 enableSmoothScroll={true}
-                fileUrl="../../../public/demo.pdf"
+                fileUrl={
+                  process.env.NODE_ENV === 'production'
+                    ? '/milaulenius/public/demo.pdf'
+                    : '/demo.pdf'
+                }
                 defaultScale={SpecialZoomLevel.PageWidth}
                 plugins={[defaultLayoutPluginInstance, zoomPluginInstance]}
                 transformGetDocumentParams={(
