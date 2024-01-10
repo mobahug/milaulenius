@@ -15,7 +15,7 @@ import type {
   TransformToolbarSlot,
 } from '@react-pdf-viewer/toolbar';
 import { zoomPlugin } from '@react-pdf-viewer/zoom';
-//test
+
 export const Projects = () => {
   const isSmallScreen = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down('sm'),
@@ -130,6 +130,7 @@ export const Projects = () => {
   return (
     <>
       <Container maxWidth="lg" sx={{ pt: isSmallScreen ? 2 : 4 }}>
+        test
         <Worker workerUrl={url}>
           <Accordion
             defaultExpanded
