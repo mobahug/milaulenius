@@ -103,7 +103,7 @@ export const PortfolioHeader = () => {
           direction="row"
           alignItems="center"
         >
-          <Grid item xs={7} sm={8}>
+          <Grid item xs={7} sm={7}>
             <Button
               component={RouterLink}
               to="/milaulenius"
