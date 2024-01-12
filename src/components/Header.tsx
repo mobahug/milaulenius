@@ -63,8 +63,8 @@ export const PortfolioHeader = () => {
             component={Link}
             href={
               process.env.NODE_ENV === 'production'
-                ? '/milaulenius/demo.pdf'
-                : '/demo.pdf'
+                ? '/milaulenius/Mila_Ulenius_CV_2024.pdf'
+                : '/Mila_Ulenius_CV_2024.pdf'
             }
             target="_blank"
           >
@@ -166,8 +166,8 @@ export const PortfolioHeader = () => {
                   underline="none"
                   href={
                     process.env.NODE_ENV === 'production'
-                      ? '/milaulenius/demo.pdf'
-                      : '/demo.pdf'
+                      ? '/milaulenius/Mila_Ulenius_CV_2024.pdf'
+                      : '/Mila_Ulenius_CV_2024.pdf'
                   }
                   target="_blank"
                 >

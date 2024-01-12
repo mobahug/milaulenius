@@ -2,7 +2,6 @@ import { Container, Theme, useMediaQuery } from '@mui/material';
 import { PortfolioHeader } from '../Header';
 import { PortfolioFooter } from '../Footer';
 import { Projects } from './Projects';
-import { ScrollToTop } from '../../utilities';
 
 export const PortfolioLandingPage = () => {
   const isSmallScreen = useMediaQuery((theme: Theme) =>
@@ -10,7 +9,6 @@ export const PortfolioLandingPage = () => {
   );
   return (
     <>
-      <ScrollToTop />
       <PortfolioHeader />
       <Container maxWidth="lg" sx={{ pt: isSmallScreen ? 10 : 20 }}>
         <Projects />
